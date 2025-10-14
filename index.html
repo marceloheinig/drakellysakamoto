@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Kelly Sakamoto | Endocrinologia & Medicina do Estilo de Vida</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8; /* Um branco-gelo/bege muito claro */
+            color: #4B4442; /* Um marrom-acinzentado escuro para o texto */
+        }
+        h1, h2, h3, .font-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .text-brand-primary {
+            color: #8C6F66; /* Um tom de terracota/marrom suave */
+        }
+        .bg-brand-primary {
+            background-color: #8C6F66;
+        }
+        .bg-brand-secondary {
+            background-color: #EAE3E1; /* Um bege/rosé claro para fundos de seção */
+        }
+        .border-brand-primary {
+            border-color: #8C6F66;
+        }
+        .btn {
+            @apply inline-block px-8 py-3 rounded-md text-sm font-semibold tracking-wide transition-transform duration-300 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-brand-primary text-white hover:bg-opacity-90 transform hover:-translate-y-1;
+        }
+        .btn-outline {
+            @apply bg-transparent border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transform hover:-translate-y-1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-title text-2xl font-bold text-brand-primary tracking-wider">
+                Dra. Kelly Sakamoto
+            </a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="#sobre" class="text-gray-600 hover:text-brand-primary">Sobre</a>
+                <a href="#abordagem" class="text-gray-600 hover:text-brand-primary">Abordagem</a>
+                <a href="#mev-plan" class="text-gray-600 hover:text-brand-primary">MEV Plan</a>
+                <a href="#metodo" class="text-gray-600 hover:text-brand-primary">Método</a>
+                <a href="#programa-evoluir" class="text-gray-600 hover:text-brand-primary">Programa</a>
+                <a href="#consultorio" class="text-gray-600 hover:text-brand-primary">Consultório</a>
+                <a href="#contato" class="text-gray-600 hover:text-brand-primary">Contato</a>
+                <a href="https://wa.me/5549999999999" target="_blank" class="btn btn-primary">Agende sua Consulta</a>
+            </nav>
+             <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#sobre" class="block py-2 text-gray-600 hover:text-brand-primary">Sobre</a>
+            <a href="#abordagem" class="block py-2 text-gray-600 hover:text-brand-primary">Abordagem</a>
+            <a href="#mev-plan" class="block py-2 text-gray-600 hover:text-brand-primary">MEV Plan</a>
+            <a href="#metodo" class="block py-2 text-gray-600 hover:text-brand-primary">Método</a>
+            <a href="#programa-evoluir" class="block py-2 text-gray-600 hover:text-brand-primary">Programa</a>
+            <a href="#consultorio" class="block py-2 text-gray-600 hover:text-brand-primary">Consultório</a>
+            <a href="#contato" class="block py-2 text-gray-600 hover:text-brand-primary">Contato</a>
+            <a href="https://wa.me/5549999999999" target="_blank" class="btn btn-primary w-full mt-4 text-center">Agende sua Consulta</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-24 md:py-32 bg-brand-secondary">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-primary leading-tight">Endocrinologia & Medicina do Estilo de Vida</h1>
+                <h2 class="text-2xl md:text-3xl text-gray-700 mt-4">O início da sua transformação.</h2>
+                <p class="mt-8 max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+                    Mais do que tratar doenças, quero te propor saúde com equilíbrio hormonal e mudança do estilo de vida. Aqui, você encontrará um cuidado integral que respeita sua história e transforma seus hábitos de forma sustentável.
+                </p>
+                <div class="mt-12 inline-block border-2 border-brand-primary p-3 rounded-lg shadow-lg">
+                    <a href="#agendamento" class="btn btn-primary"><strong>Agendar Consulta</strong></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                    <div class="md:w-1/2 lg:w-2/5">
+                        <img src="https://placehold.co/600x750/EAE3E1/4B4442?text=Dra.+Kelly+Sakamoto" alt="Retrato da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2 lg:w-3/5">
+                        <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Quem é a Dra. Kelly Sakamoto</h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                            Sou Endocrinologista formada pela Universidade Federal de Santa Catarina, com residência médica em Medicina Interna (UFPR), Endocrinologia & Metabologia (UEL) e Pós-graduada em Medicina do Estilo de Vida pela MEV Brasil.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                            Minha missão é cuidar de pessoas, transformar vidas e inspirar um novo jeito de conquistar saúde, integrando o melhor da Endocrinologia clássica com os princípios da Medicina do Estilo de Vida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section id="abordagem" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Minha abordagem em saúde</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-3xl font-semibold text-brand-primary">Endocrinologia</h3>
+                        <p class="mt-4 text-gray-600">Cuidado especializado no diagnóstico e tratamento de condições endócrinas e metabólicas que impactam diretamente sua qualidade de vida e bem-estar.</p>
+                        <ul class="mt-6 space-y-3 text-gray-700">
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Obesidade</span></li>
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Diabetes</span></li>
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Disfunções da tireoide</span></li>
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Esteatose hepática (gordura no fígado)</span></li>
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Dislipidemia (colesterol elevado)</span></li>
+                           <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Disfunções hormonais</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-3xl font-semibold text-brand-primary">Medicina do Estilo de Vida</h3>
+                        <p class="mt-4 text-gray-600">Sub-área da Medicina que usa intervenções terapêuticas no estilo de vida para tratar e prevenir doenças crônicas, focando em pilares como alimentação saudável, atividade física, controle do estresse, sono de qualidade, conexões sociais, espiritualidade/propósito e redução de substâncias tóxicas.</p>
+                        <p class="mt-4 text-gray-600">Ela visa capacitar pacientes a adotar escolhas saudáveis, promovendo a saúde e a longevidade por meio de uma abordagem colaborativa e baseada em evidências científicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 Pillars Section -->
+        <section id="pilares" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Os 7 pilares da transformação</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"><strong>Cuidar da saúde é cuidar de tudo o que sustenta você.</strong></p>
+                    <p class="mt-4 max-w-4xl mx-auto text-gray-600 leading-relaxed">
+                        Usando o <strong>MEV Plan</strong> (ferramenta digital criada pela MEV Brasil), traçamos um verdadeiro "Raio-X do Estilo de Vida" avaliando integralmente como você vive e identificando oportunidades reais de mudança.
+                    </p>
+                </div>
+
+                <!-- Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <!-- Pillar: Alimentação -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Alimentação</h3>
+                        <p class="mt-2 text-gray-600">Nutrição equilibrada e sustentável</p>
+                    </div>
+                    <!-- Pillar: Movimento -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Movimento</h3>
+                        <p class="mt-2 text-gray-600">Atividade física regular e funcional</p>
+                    </div>
+                    <!-- Pillar: Sono -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Sono</h3>
+                        <p class="mt-2 text-gray-600">Qualidade e quantidade do seu descanso</p>
+                    </div>
+                    <!-- Pillar: Estresse -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Estresse</h3>
+                        <p class="mt-2 text-gray-600">Gestão de pressões e emoções</p>
+                    </div>
+                    <!-- Pillar: Conexões Sociais -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Conexões Sociais</h3>
+                        <p class="mt-2 text-gray-600">Relacionamentos que nutrem</p>
+                    </div>
+                    <!-- Pillar: Tóxicos -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Tóxicos</h3>
+                        <p class="mt-2 text-gray-600">Redução de substâncias nocivas</p>
+                    </div>
+                    <!-- Pillar: Propósito (centered on the last row for lg screens) -->
+                    <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl md:col-span-2 lg:col-span-1 lg:col-start-2">
+                        <h3 class="text-2xl font-semibold text-brand-primary">Propósito</h3>
+                        <p class="mt-2 text-gray-600">Sentido e direção na vida</p>
+                    </div>
+                </div>
+                
+                <p class="text-center mt-16 max-w-3xl mx-auto text-lg text-gray-600">
+                    Pequenas mudanças em cada pilar geram grandes resultados na sua vida. A transformação acontece quando trabalhamos de forma integrada, respeitando seu ritmo e suas possibilidades reais.
+                </p>
+            </div>
+        </section>
+
+        <!-- What is MEV Plan Section -->
+        <section id="mev-plan" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">O que é o MEV Plan</h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                             O MEV Plan é uma ferramenta de avaliação personalizada, utilizada por profissionais de saúde para gerar relatórios detalhados sobre o estilo de vida dos pacientes.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                            O objetivo é transformar intenções de mudança de hábitos em <strong>planos de ação concretos e estruturados</strong>, garantindo o acompanhamento e a adesão do paciente ao longo de toda a jornada.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="bg-white/50 p-6 rounded-lg">
+                                <h3 class="font-bold text-xl text-gray-800">Ferramenta de avaliação</h3>
+                                <p class="mt-2 text-gray-600">Análise completa dos hábitos para um panorama detalhado da sua rotina.</p>
+                            </div>
+                            <div class="bg-white/50 p-6 rounded-lg">
+                                <h3 class="font-bold text-xl text-gray-800">Geração de relatórios</h3>
+                                <p class="mt-2 text-gray-600">Relatórios personalizados que mostram o estado atual em cada um dos 7 pilares.</p>
+                            </div>
+                             <div class="bg-white/50 p-6 rounded-lg">
+                                <h3 class="font-bold text-xl text-gray-800">Criação de planos</h3>
+                                <p class="mt-2 text-gray-600">Planos de ação concretos para transformar intenções em resultados.</p>
+                            </div>
+                             <div class="bg-white/50 p-6 rounded-lg">
+                                <h3 class="font-bold text-xl text-gray-800">Acompanhamento contínuo</h3>
+                                <p class="mt-2 text-gray-600">Suporte para seguir o plano, aumentando a adesão e os resultados a longo prazo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized Method Section -->
+        <section id="metodo" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Meu método personalizado</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"><strong>Um cuidado que se adapta à sua vida.</strong></p>
+                    <p class="mt-6 max-w-4xl mx-auto text-gray-600 leading-relaxed">
+                        Cada pessoa tem uma história única. Por isso, desenvolvi um acompanhamento que une endocrinologia e comportamento, combinando avaliação clínica criteriosa, escuta ativa, relatórios personalizados e planos de ação mensais ajustados à sua realidade. Minha abordagem não segue protocolos rígidos – ela se molda às suas necessidades, possibilidades e objetivos.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center p-6">
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-6">Consulta inicial + MEV Plan</h3>
+                        <p class="mt-2 text-gray-600">Avaliação completa do seu estado de saúde e preenchimento do questionário de estilo de vida.</p>
+                    </div>
+                     <!-- Step 2 -->
+                    <div class="text-center p-6">
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-6">Relatório personalizado</h3>
+                        <p class="mt-2 text-gray-600">Análise detalhada dos seus 7 pilares de saúde, identificando prioridades e oportunidades.</p>
+                    </div>
+                     <!-- Step 3 -->
+                    <div class="text-center p-6">
+                         <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-6">Programa KS Evoluir+</h3>
+                        <p class="mt-2 text-gray-600">Acompanhamento estruturado de gestão do peso com suporte contínuo e ajustes mensais.</p>
+                    </div>
+                     <!-- Step 4 -->
+                    <div class="text-center p-6">
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-6">Acompanhamento contínuo</h3>
+                        <p class="mt-2 text-gray-600">Consultas frequentes para avaliar progresso, ajustar estratégias e manter a motivação.</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-16">
+                    <div class="inline-block border-2 border-brand-primary p-3 rounded-lg shadow-lg">
+                        <a href="#programa-evoluir" class="btn btn-primary"><strong>Conheça o Programa de Gestão do Peso KS Evoluir+</strong></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programa Evoluir+ Section -->
+        <section id="programa-evoluir" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Estrutura do Programa KS Evoluir+</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Uma jornada de transformação, do início ao fim.</p>
+                </div>
+                <!-- Timeline -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">1</div>
+                        <h3 class="text-xl font-semibold text-gray-800">1ª Consulta<br>Avaliação Inicial</h3>
+                        <ul class="mt-2 text-gray-600 text-sm list-disc list-inside text-left">
+                           <li>Anamnese, exame físico, avaliação de exames laboratoriais</li>
+                           <li>Definição de metas (peso, saúde metabólica, qualidade de vida)</li>
+                           <li>Aplicação inicial do MEV Plan</li>
+                           <li>Prescrição de medicamentos quando necessário</li>
+                        </ul>
+                    </div>
+                     <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                         <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">2</div>
+                        <h3 class="text-xl font-semibold text-gray-800">2ª Consulta<br>Planejamento</h3>
+                        <ul class="mt-2 text-gray-600 text-sm list-disc list-inside text-left">
+                           <li>Revisão do tratamento inicial</li>
+                           <li>Discussão do MEV Plan</li>
+                           <li>Escolha do 1º pilar de mudança</li>
+                        </ul>
+                    </div>
+                     <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                         <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">3</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Meses 2-7<br>Construção de Hábitos</h3>
+                         <ul class="mt-2 text-gray-600 text-sm list-disc list-inside text-left">
+                           <li>Consultas mensais</li>
+                           <li>Acesso a aplicativo para <em>accountability</em></li>
+                           <li>Grupo ativo no WhatsApp para apoio e dúvidas</li>
+                           <li>Foco mensal em cada pilar</li>
+                        </ul>
+                    </div>
+                     <!-- Step 4 -->
+                    <div class="flex flex-col items-center">
+                         <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">4</div>
+                        <h3 class="text-xl font-semibold text-gray-800">Meses 8-12<br>Consolidação e Autonomia</h3>
+                         <ul class="mt-2 text-gray-600 text-sm list-disc list-inside text-left">
+                           <li>Consultas bimestrais</li>
+                           <li>Miniavaliações com o MEV Plan</li>
+                           <li>Preparação para manutenção e prevenção do reganho</li>
+                           <li>Certificado de Conclusão do Programa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Diferenciais -->
+                <div class="mt-20">
+                    <h3 class="text-3xl md:text-4xl font-semibold text-brand-primary text-center mb-12">Diferenciais do KS Evoluir+</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Gestão de Saúde Integral</h4><p class="text-sm mt-1">Não focamos apenas no peso, mas na saúde como um todo.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Clareza e Organização</h4><p class="text-sm mt-1">Você entende o que esperar a cada mês.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Proximidade no Atendimento</h4><p class="text-sm mt-1">Você se sente apoiado em toda a jornada.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Previsibilidade Financeira</h4><p class="text-sm mt-1">Investimento fixo e planejado, sem surpresas.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">7 Pilares Integrados</h4><p class="text-sm mt-1">Abordagem completa do estilo de vida.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Evidência Clínica</h4><p class="text-sm mt-1">MEV Plan mostra a evolução do início ao fim.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Rede de Apoio</h4><p class="text-sm mt-1">Grupo no WhatsApp para reforço positivo.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="font-bold text-lg">Gamificação</h4><p class="text-sm mt-1">Ferramentas de acompanhamento e motivação.</p></div>
+                    </div>
+                </div>
+
+                <!-- Guia -->
+                <div class="mt-20">
+                     <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 bg-white p-10 rounded-lg shadow-xl">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl md:text-4xl font-semibold text-brand-primary">Quero ser sua guia para você</h3>
+                            <ul class="mt-6 space-y-4">
+                                <li class="flex items-start"><div class="flex-shrink-0 mr-3 mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h4 class="font-semibold text-lg">Voltar a se reconhecer no espelho</h4><p class="text-gray-600">Restaurar sua autoestima e confiança.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 mr-3 mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h4 class="font-semibold text-lg">Recuperar qualidade de vida</h4><p class="text-gray-600">Ter energia e disposição para viver plenamente.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 mr-3 mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h4 class="font-semibold text-lg">Reduzir ou reverter doenças crônicas</h4><p class="text-gray-600">Mais saúde e menos preocupações.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 mr-3 mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h4 class="font-semibold text-lg">Reduzir medicamentos</h4><p class="text-gray-600">Diminuir dependência de remédios e custos com o tratamento.</p></div></li>
+                                <li class="flex items-start"><div class="flex-shrink-0 mr-3 mt-1"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h4 class="font-semibold text-lg">Ganhar autonomia</h4><p class="text-gray-600">Confiança com saúde, propósito e independência.</p></div></li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="https://placehold.co/600x700/EAE3E1/4B4442?text=Sua+Jornada" alt="Imagem inspiradora de jornada e saúde" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- The Clinic Space Section -->
+        <section id="consultorio" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                 <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/800x600/EAE3E1/4B4442?text=Ambiente+Acolhedor" alt="Foto do interior do consultório da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Um lugar pensado para cuidar de você</h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                            Meu consultório foi cuidadosamente planejado para ser um ambiente que acolhe, inspira e traz tranquilidade. Cada detalhe foi pensado para que você se sinta à vontade e seguro durante o seu processo de transformação.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                            Com tons neutros e uma atmosfera acolhedora, o espaço reflete minha filosofia de cuidado: um ambiente onde você pode se sentir confortável para compartilhar suas preocupações, expectativas e sonhos de uma vida mais saudável.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agendamento Section -->
+        <section id="agendamento" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Sua jornada começa aqui</h2>
+                        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                            Clique no botão abaixo e escolha o melhor horário para você. Após o agendamento, você receberá:
+                        </p>
+                        <ul class="mt-6 space-y-3 text-gray-700 text-lg">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Um questionário detalhado sobre seus hábitos e estilo de vida (MEV Plan).</span>
+                            </li>
+                            <li class="flex items-start">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Pedido de exames laboratoriais básicos para a primeira consulta.</span>
+                            </li>
+                             <li class="flex items-start">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Orientações para preparação da consulta inicial.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <div class="bg-brand-secondary p-8 rounded-lg shadow-md">
+                            <img src="https://placehold.co/600x400/EAE3E1/4B4442?text=Agende+Sua+Consulta" alt="Imagem ilustrativa de agendamento" class="rounded-lg w-full mb-8">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary w-full text-center">Agende pelo WhatsApp</a>
+                                <a href="tel:+554930261422" class="btn btn-outline w-full text-center">Tel: (49) 3026-1422</a>
+                            </div>
+                        </div>
+                         <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                     <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.001-1.742 3.001H4.42c-1.532 0-2.492-1.667-1.742-3.001l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <strong>Importante:</strong> Traga seus exames anteriores (se tiver) e uma lista de medicações em uso. Quanto mais informações você compartilhar, mais completa será nossa avaliação inicial.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="contato" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Localização e Contato</h2>
+                 <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                    <strong>Estou pronta para te acolher e, juntos, traçarmos o melhor caminho para sua saúde.</strong>
+                </p>
+
+                <div class="mt-12 bg-white p-10 rounded-lg shadow-xl max-w-3xl mx-auto text-left flex flex-col sm:flex-row gap-8 items-start">
+                    <div class="w-full sm:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800">Localização</h3>
+                        <div class="mt-4 text-gray-600 space-y-2">
+                             <p class="font-semibold">Clínica ERA</p>
+                             <p>Avenida Nereu Ramos, 1248-D, sala 1</p>
+                             <p>(entrada pela Rua Pinheiros)</p>
+                             <p>Bairro Palmital - Chapecó/SC</p>
+                             <p>CEP 89814-247</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Clínica+ERA+Avenida+Nereu+Ramos+1248-D+Chapecó+SC" target="_blank" class="btn btn-outline mt-6 w-full sm:w-auto text-center">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                     <div class="w-full sm:w-1/2 border-t sm:border-t-0 sm:border-l border-gray-200 pt-8 sm:pt-0 sm:pl-8">
+                        <h3 class="text-2xl font-semibold text-gray-800">Contato</h3>
+                        <div class="mt-4 text-gray-600 space-y-2">
+                             <p><strong class="font-medium">WhatsApp:</strong> (49) 99116-0511</p>
+                             <p><strong class="font-medium">Email:</strong> kellyendocrino@clinicaera.com.br</p>
+                        </div>
+                         <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary mt-6 w-full sm:w-auto text-center">
+                            Agendar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white tracking-wider">Dra. Kelly Sakamoto</h3>
+                    <p class="mt-2 text-sm text-gray-400">Endocrinologia & Medicina do Estilo de Vida — transformando vidas com propósito.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Navegação</h4>
+                     <ul class="mt-4 space-y-2">
+                        <li><a href="#sobre" class="hover:text-white text-sm">Sobre</a></li>
+                        <li><a href="#abordagem" class="hover:text-white text-sm">Abordagem</a></li>
+                        <li><a href="#mev-plan" class="hover:text-white text-sm">MEV Plan</a></li>
+                        <li><a href="#metodo" class="hover:text-white text-sm">Método</a></li>
+                        <li><a href="#programa-evoluir" class="hover:text-white text-sm">Programa</a></li>
+                        <li><a href="#consultorio" class="hover:text-white text-sm">Consultório</a>
+                </div>
+                 <div>
+                    <h4 class="text-lg font-semibold text-white">Endereço</h4>
+                     <p class="mt-4 text-sm text-gray-400">Clínica ERA</p>
+                     <p class="text-sm text-gray-400">Av. Nereu Ramos, 1248-D</p>
+                     <p class="text-sm text-gray-400">Chapecó/SC</p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Dra. Kelly Sakamoto - Todos os direitos reservados. Desenvolvido com ciência e propósito.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = document.querySelectorAll('header nav a, #mobile-menu a');
+        for (let link of navLinks) {
+            link.addEventListener('click', (e) => {
+                if(e.currentTarget.href.includes("#")){
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
