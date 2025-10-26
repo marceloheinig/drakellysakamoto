@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Kelly Sakamoto | Endocrinologia & Medicina do Estilo de Vida</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -44,6 +41,37 @@
         .btn-outline {
             @apply bg-transparent border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transform hover:-translate-y-1;
         }
+        /* Estilo para o iframe responsivo */
+        .responsive-iframe {
+            @apply w-full aspect-video rounded-lg shadow-md;
+        }
+        /* Estilos para o Accordion FAQ */
+        .faq-item summary {
+            @apply flex justify-between items-center py-4 px-6 cursor-pointer bg-white rounded-lg shadow-sm hover:bg-gray-50;
+            list-style: none; /* Remove default marker */
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none; /* Remove default marker in Chrome/Safari */
+        }
+        .faq-item summary::after {
+            content: '+';
+            @apply text-brand-primary text-2xl font-light transition-transform duration-300;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            @apply px-6 pb-6 pt-2 bg-white rounded-b-lg shadow-sm;
+        }
+        .faq-answer p, .faq-answer ul, .faq-answer ol {
+            @apply mb-3 text-gray-600 leading-relaxed;
+        }
+         .faq-answer ul, .faq-answer ol {
+            @apply list-inside;
+        }
+        .faq-answer ol {
+            @apply list-decimal;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -54,36 +82,39 @@
             <a href="#" class="font-title text-2xl font-bold text-brand-primary tracking-wider">
                 Dra. Kelly Sakamoto
             </a>
-            <nav class="hidden md:flex items-center space-x-10">
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
                 <a href="#sobre" class="text-gray-600 hover:text-brand-primary">Sobre</a>
+                <a href="#depoimentos" class="text-gray-600 hover:text-brand-primary">Depoimentos</a>
                 <a href="#abordagem" class="text-gray-600 hover:text-brand-primary">Abordagem</a>
-                <a href="#mev-plan" class="text-gray-600 hover:text-brand-primary">MEV Plan</a>
                 <a href="#metodo" class="text-gray-600 hover:text-brand-primary">Método</a>
                 <a href="#programa-evoluir" class="text-gray-600 hover:text-brand-primary">Programa</a>
                 <a href="#consultorio" class="text-gray-600 hover:text-brand-primary">Consultório</a>
+                <a href="#faq" class="text-gray-600 hover:text-brand-primary">FAQ</a> <!-- Link FAQ adicionado -->
                 <a href="#contato" class="text-gray-600 hover:text-brand-primary">Contato</a>
-                <a href="https://wa.me/5549999999999" target="_blank" class="btn btn-primary">Agende sua Consulta</a>
+                <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary">Agende sua Consulta</a>
             </nav>
-             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden">
+             <!-- Botão Menu Mobile -->
+             <button id="mobile-menu-button" class="md:hidden">
                 <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-         <!-- Mobile Menu -->
+         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#sobre" class="block py-2 text-gray-600 hover:text-brand-primary">Sobre</a>
+            <a href="#depoimentos" class="block py-2 text-gray-600 hover:text-brand-primary">Depoimentos</a>
             <a href="#abordagem" class="block py-2 text-gray-600 hover:text-brand-primary">Abordagem</a>
-            <a href="#mev-plan" class="block py-2 text-gray-600 hover:text-brand-primary">MEV Plan</a>
             <a href="#metodo" class="block py-2 text-gray-600 hover:text-brand-primary">Método</a>
             <a href="#programa-evoluir" class="block py-2 text-gray-600 hover:text-brand-primary">Programa</a>
             <a href="#consultorio" class="block py-2 text-gray-600 hover:text-brand-primary">Consultório</a>
+            <a href="#faq" class="block py-2 text-gray-600 hover:text-brand-primary">FAQ</a> <!-- Link FAQ adicionado -->
             <a href="#contato" class="block py-2 text-gray-600 hover:text-brand-primary">Contato</a>
-            <a href="https://wa.me/5549999999999" target="_blank" class="btn btn-primary w-full mt-4 text-center">Agende sua Consulta</a>
+            <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary w-full mt-4 text-center">Agende sua Consulta</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Seção Hero -->
         <section class="py-24 md:py-32 bg-brand-secondary">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-bold text-brand-primary leading-tight">Endocrinologia & Medicina do Estilo de Vida</h1>
@@ -97,35 +128,103 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Seção Sobre -->
         <section id="sobre" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                     <div class="md:w-1/2 lg:w-2/5">
-                        <img src="images\image_01.jpeg" alt="Retrato da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/600x750/EAE3E1/4B4442?text=Dra.+Kelly+Sakamoto" alt="Retrato da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div class="md:w-1/2 lg:w-3/5">
                         <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Quem é a Dra. Kelly Sakamoto</h2>
                         <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                            Sou Endocrinologista formada pela Universidade Federal de Santa Catarina, com residência médica em Medicina Interna (UFPR), Endocrinologia & Metabologia (UEL) e Pós-graduada em Medicina do Estilo de Vida pela MEV Brasil.
+                            Sou Endocrinologista formada pela Universidade Federal de Santa Catarina, com residência médica em Medicina Interna (UFPR) e Endocrinologia & Metabologia (UEL).
                         </p>
                         <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-                            Minha missão é cuidar de pessoas, transformar vidas e inspirar um novo jeito de conquistar saúde, integrando o melhor da Endocrinologia clássica com os princípios da Medicina do Estilo de Vida.
+                            Ao longo de 20 anos de carreira, percebi que apenas tratar sintomas não era suficiente. Meus pacientes precisavam de uma mudança real e duradoura. Foi assim que encontrei na Medicina do Estilo de Vida um novo caminho para cuidar: um cuidado que acolhe, ensina e inspira.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                            Hoje, minha missão é ser guia nessa jornada, unindo o melhor da Endocrinologia clássica, com escolhas conscientes que devolvem energia, equilíbrio e bem-estar verdadeiro.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Approach Section -->
-        <section id="abordagem" class="py-20 md:py-28 bg-brand-secondary">
+        <!-- Seção Depoimentos -->
+        <section id="depoimentos" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">O que meus pacientes dizem</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Pacientes que confiaram em meu trabalho e transformaram suas vidas.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <!-- 5 Estrelas -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <blockquote class="text-gray-600 italic leading-relaxed flex-grow">"Dra. Kelly é uma profissional excepcional! Muito atenciosa, acolhedora e dedicada. Ela realmente ouve o paciente com atenção e cuidado."</blockquote>
+                        <p class="mt-6 font-semibold text-brand-primary text-right">- Luciane Peliser</p>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <!-- 5 Estrelas -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <blockquote class="text-gray-600 italic leading-relaxed flex-grow">"Amei a consulta. Além de explicar super bem, ela usa a medicina do estilo de vida para ajudar a ter mais saúde. Foi uma consulta super completa e saí de lá com um plano de ação para chamar de meu."</blockquote>
+                        <p class="mt-6 font-semibold text-brand-primary text-right">- Ana Carolina Pan</p>
+                    </div>
+                     <!-- Depoimento 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <!-- 5 Estrelas -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <blockquote class="text-gray-600 italic leading-relaxed flex-grow">"Dra Kelly tem um cuidado e atenção em cada detalhe, um atendimento humanizado e personalizado, transmite muita confiança."</blockquote>
+                        <p class="mt-6 font-semibold text-brand-primary text-right">- Andrea Schwert</p>
+                    </div>
+                     <!-- Depoimento 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <!-- 5 Estrelas -->
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <blockquote class="text-gray-600 italic leading-relaxed flex-grow">"Uma profissional admirável, sempre estudando e se atualizando. Atenciosa, humana e muito competente, é perceptível o amor que tem pela profissão."</blockquote>
+                        <p class="mt-6 font-semibold text-brand-primary text-right">- Karoline Tozzo Trevisan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Abordagem (Texto ajustado) -->
+        <section id="abordagem" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Minha abordagem em saúde</h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
-                    <div class="bg-white p-8 rounded-lg shadow-md">
+                    <!-- Endocrinologia -->
+                    <div class="bg-brand-secondary p-8 rounded-lg shadow-md">
                         <h3 class="text-3xl font-semibold text-brand-primary">Endocrinologia</h3>
                         <p class="mt-4 text-gray-600">Cuidado especializado no diagnóstico e tratamento de condições endócrinas e metabólicas que impactam diretamente sua qualidade de vida e bem-estar.</p>
                         <ul class="mt-6 space-y-3 text-gray-700">
@@ -137,59 +236,60 @@
                            <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Disfunções hormonais</span></li>
                         </ul>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md">
+                    <!-- MEV (Texto ajustado) -->
+                    <div class="bg-brand-secondary p-8 rounded-lg shadow-md">
                         <h3 class="text-3xl font-semibold text-brand-primary">Medicina do Estilo de Vida</h3>
-                        <p class="mt-4 text-gray-600">Sub-área da Medicina que usa intervenções terapêuticas no estilo de vida para tratar e prevenir doenças crônicas, focando em pilares como alimentação saudável, atividade física, controle do estresse, sono de qualidade, conexões sociais, espiritualidade/propósito e redução de substâncias tóxicas.</p>
-                        <p class="mt-4 text-gray-600">Ela visa capacitar pacientes a adotar escolhas saudáveis, promovendo a saúde e a longevidade por meio de uma abordagem colaborativa e baseada em evidências científicas.</p>
+                        <p class="mt-4 text-gray-600">A MEV atua de forma integrada em 7 grandes áreas: alimentação, atividade física, sono, espiritualidade/propósito, controle do estresse, dos tóxicos e das conexões sociais.</p>
+                        <p class="mt-6 font-semibold text-gray-700">O médico do estilo de vida:</p>
+                        <ul class="mt-4 space-y-3 text-gray-600 list-disc list-inside">
+                            <li>escuta a pessoa de forma ampliada, compreendendo não apenas os sintomas, mas contexto, rotina, emoções e relações</li>
+                            <li>identifica comportamentos de risco e define, junto com a pessoa, metas realistas e mensuráveis</li>
+                            <li>usa ferramentas de motivação e acompanhamento contínuo, porque mudança de hábito é um processo, não um evento pontual</li>
+                            <li>quando necessário, integra uso de medicamentos de forma complementar e não substitutiva</li>
+                        </ul>
+                        <p class="mt-6 text-gray-700 font-semibold text-center">A MEV é o elo entre a <span class="text-brand-primary">CIÊNCIA MÉDICA</span> e o <span class="text-brand-primary">COMPORTAMENTO HUMANO</span>, ajudando a pessoa a se tornar o <span class="text-brand-primary">PROTAGONISTA</span> da própria saúde.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7 Pillars Section -->
+        <!-- Seção 7 Pilares -->
         <section id="pilares" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Os 7 pilares da transformação</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"><strong>Cuidar da saúde é cuidar de tudo o que sustenta você.</strong></p>
                     <p class="mt-4 max-w-4xl mx-auto text-gray-600 leading-relaxed">
-                        Usando o <strong>MEV Plan</strong> (ferramenta digital criada pela MEV Brasil), traçamos um verdadeiro "Raio-X do Estilo de Vida" avaliando integralmente como você vive e identificando oportunidades reais de mudança.
+                        Usando o <strong>MEV Plan</strong>, traçamos um verdadeiro "Raio-X do Estilo de Vida" avaliando integralmente como você vive e identificando oportunidades reais de mudança.
                     </p>
                 </div>
 
-                <!-- Pillars Grid -->
+                <!-- Grid dos Pilares -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <!-- Pillar: Alimentação -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Alimentação</h3>
                         <p class="mt-2 text-gray-600">Nutrição equilibrada e sustentável</p>
                     </div>
-                    <!-- Pillar: Movimento -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Movimento</h3>
                         <p class="mt-2 text-gray-600">Atividade física regular e funcional</p>
                     </div>
-                    <!-- Pillar: Sono -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Sono</h3>
                         <p class="mt-2 text-gray-600">Qualidade e quantidade do seu descanso</p>
                     </div>
-                    <!-- Pillar: Estresse -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Estresse</h3>
                         <p class="mt-2 text-gray-600">Gestão de pressões e emoções</p>
                     </div>
-                    <!-- Pillar: Conexões Sociais -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Conexões Sociais</h3>
                         <p class="mt-2 text-gray-600">Relacionamentos que nutrem</p>
                     </div>
-                    <!-- Pillar: Tóxicos -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                         <h3 class="text-2xl font-semibold text-brand-primary">Tóxicos</h3>
                         <p class="mt-2 text-gray-600">Redução de substâncias nocivas</p>
                     </div>
-                    <!-- Pillar: Propósito (centered on the last row for lg screens) -->
                     <div class="bg-white border border-brand-primary/40 p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl md:col-span-2 lg:col-span-1 lg:col-start-2">
                         <h3 class="text-2xl font-semibold text-brand-primary">Propósito</h3>
                         <p class="mt-2 text-gray-600">Sentido e direção na vida</p>
@@ -202,17 +302,17 @@
             </div>
         </section>
 
-        <!-- What is MEV Plan Section -->
+        <!-- Seção O que é o MEV Plan (Texto ajustado) -->
         <section id="mev-plan" class="py-20 md:py-28 bg-brand-secondary">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div class="lg:w-1/2">
                         <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">O que é o MEV Plan</h2>
                         <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                             O MEV Plan é uma ferramenta de avaliação personalizada, utilizada por profissionais de saúde para gerar relatórios detalhados sobre o estilo de vida dos pacientes.
+                             O MEV Plan é uma ferramenta de avaliação personalizada, utilizada por profissionais de saúde para gerar relatórios detalhados sobre o estilo de vida da pessoa.
                         </p>
                         <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-                            O objetivo é transformar intenções de mudança de hábitos em <strong>planos de ação concretos e estruturados</strong>, garantindo o acompanhamento e a adesão do paciente ao longo de toda a jornada.
+                            O objetivo é transformar intenções de mudança de hábitos em <strong>planos de ação concretos e estruturados</strong>, garantindo o acompanhamento e a adesão da pessoa ao longo de toda a jornada.
                         </p>
                     </div>
                     <div class="lg:w-1/2 w-full">
@@ -239,7 +339,7 @@
             </div>
         </section>
 
-        <!-- Personalized Method Section -->
+        <!-- Seção Método Personalizado (Botão removido) -->
         <section id="metodo" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -251,7 +351,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Step 1 -->
+                    <!-- Passos 1-4 -->
                     <div class="text-center p-6">
                         <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
@@ -259,7 +359,6 @@
                         <h3 class="text-xl font-semibold text-gray-800 mt-6">Consulta inicial + MEV Plan</h3>
                         <p class="mt-2 text-gray-600">Avaliação completa do seu estado de saúde e preenchimento do questionário de estilo de vida.</p>
                     </div>
-                     <!-- Step 2 -->
                     <div class="text-center p-6">
                         <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
@@ -267,7 +366,6 @@
                         <h3 class="text-xl font-semibold text-gray-800 mt-6">Relatório personalizado</h3>
                         <p class="mt-2 text-gray-600">Análise detalhada dos seus 7 pilares de saúde, identificando prioridades e oportunidades.</p>
                     </div>
-                     <!-- Step 3 -->
                     <div class="text-center p-6">
                          <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
@@ -275,7 +373,6 @@
                         <h3 class="text-xl font-semibold text-gray-800 mt-6">Programa KS Evoluir+</h3>
                         <p class="mt-2 text-gray-600">Acompanhamento estruturado de gestão do peso com suporte contínuo e ajustes mensais.</p>
                     </div>
-                     <!-- Step 4 -->
                     <div class="text-center p-6">
                         <div class="flex items-center justify-center h-16 w-16 mx-auto bg-brand-secondary rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
@@ -284,24 +381,18 @@
                         <p class="mt-2 text-gray-600">Consultas frequentes para avaliar progresso, ajustar estratégias e manter a motivação.</p>
                     </div>
                 </div>
-                 <div class="text-center mt-16">
-                    <div class="inline-block border-2 border-brand-primary p-3 rounded-lg shadow-lg">
-                        <a href="#programa-evoluir" class="btn btn-primary"><strong>Conheça o Programa de Gestão do Peso KS Evoluir+</strong></a>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Programa Evoluir+ Section -->
+        <!-- Seção Programa KS Evoluir+ -->
         <section id="programa-evoluir" class="py-20 md:py-28 bg-brand-secondary">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Estrutura do Programa KS Evoluir+</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Uma jornada de transformação, do início ao fim.</p>
                 </div>
-                <!-- Timeline -->
+                <!-- Timeline/Etapas -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <!-- Step 1 -->
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">1</div>
                         <h3 class="text-xl font-semibold text-gray-800">1ª Consulta<br>Avaliação Inicial</h3>
@@ -312,7 +403,6 @@
                            <li>Prescrição de medicamentos quando necessário</li>
                         </ul>
                     </div>
-                     <!-- Step 2 -->
                     <div class="flex flex-col items-center">
                          <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">2</div>
                         <h3 class="text-xl font-semibold text-gray-800">2ª Consulta<br>Planejamento</h3>
@@ -322,7 +412,6 @@
                            <li>Escolha do 1º pilar de mudança</li>
                         </ul>
                     </div>
-                     <!-- Step 3 -->
                     <div class="flex flex-col items-center">
                          <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">3</div>
                         <h3 class="text-xl font-semibold text-gray-800">Meses 2-7<br>Construção de Hábitos</h3>
@@ -333,7 +422,6 @@
                            <li>Foco mensal em cada pilar</li>
                         </ul>
                     </div>
-                     <!-- Step 4 -->
                     <div class="flex flex-col items-center">
                          <div class="flex items-center justify-center w-16 h-16 bg-brand-primary text-white text-2xl font-bold rounded-full mb-4">4</div>
                         <h3 class="text-xl font-semibold text-gray-800">Meses 8-12<br>Consolidação e Autonomia</h3>
@@ -361,7 +449,7 @@
                     </div>
                 </div>
 
-                <!-- Guia -->
+                <!-- Quero ser sua guia -->
                 <div class="mt-20">
                      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 bg-white p-10 rounded-lg shadow-xl">
                         <div class="md:w-1/2">
@@ -383,13 +471,12 @@
             </div>
         </section>
 
-
-        <!-- The Clinic Space Section -->
+        <!-- Seção Consultório (Texto ajustado) -->
         <section id="consultorio" class="py-20 md:py-28">
             <div class="container mx-auto px-6">
                  <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
                     <div class="md:w-1/2">
-                        <img src="images\image_03.jpeg" alt="Foto do interior do consultório da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
+                        <img src="https://placehold.co/800x600/EAE3E1/4B4442?text=Ambiente+Acolhedor" alt="Foto do interior do consultório da Dra. Kelly Sakamoto" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div class="md:w-1/2">
                         <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Um lugar pensado para cuidar de você</h2>
@@ -397,21 +484,21 @@
                             Meu consultório foi cuidadosamente planejado para ser um ambiente que acolhe, inspira e traz tranquilidade. Cada detalhe foi pensado para que você se sinta à vontade e seguro durante o seu processo de transformação.
                         </p>
                         <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-                            Com tons neutros e uma atmosfera acolhedora, o espaço reflete minha filosofia de cuidado: um ambiente onde você pode se sentir confortável para compartilhar suas preocupações, expectativas e sonhos de uma vida mais saudável.
+                            Com tons neutros e uma atmosfera acolhedora, o espaço reflete minha filosofia de cuidado: um ambiente onde você pode se sentir confortável para compartilhar suas preocupações, desejos e expectativas.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Agendamento Section -->
+        <!-- Seção Agendamento (Texto ajustado) -->
         <section id="agendamento" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div class="lg:w-1/2">
                         <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Sua jornada começa aqui</h2>
                         <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                            Clique no botão abaixo e escolha o melhor horário para você. Após o agendamento, você receberá:
+                            Clique no botão abaixo e agende sua consulta. Após o agendamento, você receberá:
                         </p>
                         <ul class="mt-6 space-y-3 text-gray-700 text-lg">
                             <li class="flex items-start">
@@ -430,7 +517,7 @@
                     </div>
                     <div class="lg:w-1/2 w-full">
                         <div class="bg-brand-secondary p-8 rounded-lg shadow-md">
-                            <img src="images\image_04.jpeg" alt="Imagem ilustrativa de agendamento" class="rounded-lg w-full mb-8">
+                            <img src="https://placehold.co/600x400/EAE3E1/4B4442?text=Agende+Sua+Consulta" alt="Imagem ilustrativa de agendamento" class="rounded-lg w-full mb-8">
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary w-full text-center">Agende pelo WhatsApp</a>
                                 <a href="tel:+554930261422" class="btn btn-outline w-full text-center">Tel: (49) 3026-1422</a>
@@ -455,93 +542,213 @@
             </div>
         </section>
 
-        <!-- Location Section -->
-        <section id="contato" class="py-20 md:py-28 bg-brand-secondary">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Localização e Contato</h2>
-        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-            <strong>Estou pronta para te acolher e, juntos, traçarmos o melhor caminho para sua saúde.</strong>
-        </p>
-
-        <div class="mt-12 bg-white p-10 rounded-lg shadow-xl max-w-4xl mx-auto text-left flex flex-col lg:flex-row gap-8 items-start">
-            <div class="w-full lg:w-1/2">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Localização</h3>
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.8275598491465!2d-52.609909980570194!3d-27.115036690726363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b6a210484cdf%3A0x1bf6ae69cff2eaad!2sDra%20Kelly%20Suga%20Sakamoto%20Heinig!5e0!3m2!1sen!2sbr!4v1760482575847!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Seção FAQ -->
+        <section id="faq" class="py-20 md:py-28 bg-brand-secondary">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Perguntas frequentes</h2>
                 </div>
-                 <div class="mt-4 text-gray-600 text-sm">
-                    <p class="font-semibold">Clínica ERA</p>
-                    <p>Avenida Nereu Ramos, 1248-D, sala 1 (entrada pela Rua Pinheiros)</p>
-                    <p>Bairro Palmital - Chapecó/SC</p>
+                <div class="space-y-4">
+                    <!-- Pergunta 1 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">Como é a consulta?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>A consulta tem duração de 1 hora.</p>
+                            <p>Etapas da Consulta:</p>
+                            <ol>
+                                <li><strong>Escuta ativa e acolhimento:</strong>
+                                    <ul>
+                                        <li>Conversa sobre história de saúde, rotina, queixas, metas e desafios</li>
+                                        <li>Análise do estilo de vida: sono, alimentação, movimento, estresse, conexões sociais e espiritualidade (MEV Plan)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Avaliação clínica geral:</strong> (pressão arterial, altura, peso, IMC, circunferência abdominal, força muscular e exame físico)</li>
+                                <li><strong>Análise de exames prévios:</strong> (laboratoriais e de imagem)</li>
+                                <li><strong>Solicitação de novos exames:</strong> quando necessário (incluindo composição corporal por DEXA – realizado fora do consultório)</li>
+                                <li><strong>Plano terapêutico individualizado:</strong> com mudanças no estilo de vida, ajustes hormonais, suplementações ou medicamentos</li>
+                                <li><strong>Rede de apoio:</strong> com encaminhamentos a outros profissionais, se indicado (nutricionista, psicólogo, educador físico, etc.)</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <!-- Pergunta 2 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">Quais são os serviços disponíveis?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Trabalho com consultas avulsas (com direito a um retorno em até 45 dias, conforme a necessidade).</p>
+                            <p>Trabalho com planos de acompanhamento (vide Programa KS Evoluir+) de 12 meses.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 3 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">Tem bioimpedância?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Para uma avaliação de composição corporal com rigor clínico, utilizo o exame de DXA em vez da bioimpedância no consultório, porque entendo que isso oferece benefícios importantes em termos de precisão, segurança e utilidade para o acompanhamento médico-endocrinológico.</p>
+                            <p>A DXA estima massa gorda, massa magra e densidade óssea, com boa correlação frente aos métodos “padrões-ouro”. Já a bioimpedância apresenta variabilidade significativa dependendo do nível de hidratação, alimentos recentes, edema, composição corporal atípica, entre outros fatores.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 4 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">A Dra atende convênios?</span>
+                        </summary>
+                        <div class="faq-answer">
+                             <p>Para garantir <strong>"tempo adequado de consulta, acolhimento e uma abordagem personalizada"</strong>, trabalho apenas com <strong>atendimento particular</strong>.</p>
+                            <p>Caso você possua plano de saúde, posso fornecer a nota fiscal para solicitação de reembolso, conforme as regras do seu convênio.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 5 -->
+                     <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">Quais são as formas de pagamento?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Aceitamos PIX, dinheiro, cartões de crédito e débito.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 6 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">Parcela valor de consulta?</span>
+                        </summary>
+                        <div class="faq-answer">
+                             <p>Não, consultas avulsas devem ser pagas à vista.</p>
+                             <p>Parcelamos o pagamento dos planos de acompanhamento em até 12x.</p>
+                        </div>
+                    </details>
+                     <!-- Pergunta 7 -->
+                     <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">A Dra atende crianças?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Atendo pacientes com 16 anos ou mais de idade.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 8 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">A Dra prescreve as "canetas emagrecedoras"?</span>
+                        </summary>
+                        <div class="faq-answer">
+                             <p>Sim, conforme avaliação individual de cada pessoa.</p>
+                        </div>
+                    </details>
+                    <!-- Pergunta 9 -->
+                    <details class="faq-item group">
+                        <summary>
+                            <span class="font-semibold text-lg text-gray-800 group-hover:text-brand-primary">A Dra prescreve hormônios com fins estéticos?</span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Não. Minha conduta médica inclui a prescrição de hormônios somente quando houver deficiência hormonal comprovada, com indicação científica e com acompanhamento criterioso. Por isso, não prescrevo anabolizantes ou hormônios para ganho de massa ou fins estéticos/performance, em conformidade com as normas éticas do CFM e os posicionamentos das principais sociedades médicas.</p>
+                            <p>Se você procura soluções seguras e baseadas em evidência para emagrecimento, melhora metabólica ou recuperação hormonal, vamos juntos definir o plano mais adequado — com foco real na sua saúde, não em atalhos arriscados.</p>
+                        </div>
+                    </details>
                 </div>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Nereu+Ramos,+1248-D,+Chapeco,+SC" target="_blank" class="btn btn-outline mt-4 w-full text-center">
-                    Obter direções
-                </a>
             </div>
-            
-            <div class="w-full lg:w-1/2 border-t lg:border-t-0 lg:border-l border-gray-200 pt-8 lg:pt-0 lg:pl-8">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Contato</h3>
-                <div class="text-gray-600 space-y-4">
-                    <p>
-                        <strong class="font-medium">WhatsApp:</strong><br>
-                        <a href="https://wa.me/5549991160511" target="_blank" class="text-brand-primary hover:underline">(49) 99116-0511</a>
-                    </p>
-                    <p>
-                        <strong class="font-medium">Email:</strong><br>
-                        <a href="mailto:kellyendocrino@clinicaera.com.br" class="text-brand-primary hover:underline">kellyendocrino@clinicaera.com.br</a>
-                    </p>
+        </section>
+
+        <!-- Seção Localização (Revisada com 2 colunas) -->
+        <section id="contato" class="py-20 md:py-28 bg-white"> <!-- Mudado o BG para branco para diferenciar do FAQ -->
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-semibold text-brand-primary">Localização e Atendimento</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                    <strong>Estou pronta para te acolher e, juntos, traçarmos o melhor caminho para sua saúde.</strong>
+                </p>
+                
+                <div class="mt-12 bg-brand-secondary p-10 rounded-lg shadow-xl max-w-4xl mx-auto text-left flex flex-col lg:flex-row gap-8 items-start">
+                    
+                    <!-- Coluna Esquerda (Mapa) -->
+                    <div class="w-full lg:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Endereço</h3>
+                        <div class="overflow-hidden rounded-lg shadow-md">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.8275598491465!2d-52.609909980570194!3d-27.115036690726363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b6a210484cdf%3A0x1bf6ae69cff2eaad!2sDra%20Kelly%20Suga%20Sakamoto%20Heinig!5e0!3m2!1sen!2sbr!4v1760482575847!5m2!1sen!2sbr" 
+                                    class="responsive-iframe" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                         <div class="mt-4 text-gray-600 text-sm">
+                            <p class="font-semibold">Clínica ERA</p>
+                            <p>Avenida Nereu Ramos, 1248-D, sala 1 (entrada pela Rua Pinheiros)</p>
+                            <p>Bairro Palmital - Chapecó/SC</p>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Nereu+Ramos,+1248-D,+Chapeco,+SC" target="_blank" class="btn btn-outline mt-4 w-full text-center">
+                            Obter direções
+                        </a>
+                    </div>
+                    
+                    <!-- Coluna Direita (Horário) -->
+                    <div class="w-full lg:w-1/2 border-t lg:border-t-0 lg:border-l border-gray-200 pt-8 lg:pt-0 lg:pl-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Horário de Atendimento</h3>
+                        <div class="text-gray-600 space-y-2">
+                            <p>
+                                <strong class="font-medium">2ª - 6ª feiras:</strong><br>
+                                das 9h às 12h<br>
+                                das 13:30h às 18h
+                            </p>
+                        </div>
+                        <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary mt-6 w-full text-center">
+                            Agendar pelo WhatsApp
+                        </a>
+                    </div>
+
                 </div>
-                <a href="https://wa.me/5549991160511" target="_blank" class="btn btn-primary mt-6 w-full text-center">
-                    Agendar pelo WhatsApp
-                </a>
             </div>
-        </div>
-    </div>
-</section>
-
-
+        </section>
 
     </main>
     
-    <!-- Footer -->
+    <!-- Rodapé (CRM atualizado) -->
     <footer class="bg-gray-800 text-gray-400">
-    <div class="container mx-auto px-6 py-10 text-center">
-        
-        <h3 class="font-title text-xl font-bold text-white tracking-wider">Dra. Kelly Sakamoto</h3>
-	<p class="mt-1 text-xs text-gray-300 -mt-1">CRM/SC 9175 | RQE 9176</p> 
-        <p class="mt-2 text-sm">
-            Endocrinologia & Medicina do Estilo de Vida — transformando vidas com propósito.
-        </p>
+        <div class="container mx-auto px-6 py-10 text-center">
+            
+            <h3 class="font-title text-xl font-bold text-white tracking-wider">Dra. Kelly Sakamoto</h3>
+            <p class="mt-1 text-xs text-gray-300 -mt-1">CRM/SC 12156 | RQE 9176</p>
+            <p class="mt-2 text-sm">
+                Endocrinologia & Medicina do Estilo de Vida — transformando vidas com propósito.
+            </p>
 
-        <div class="flex justify-center space-x-6 mt-6">
-            <a href="https://wa.me/5549991160511" target="_blank" aria-label="WhatsApp" class="hover:text-white">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.58C8.75 21.39 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2M12.04 3.67C16.56 3.67 20.28 7.39 20.28 11.91C20.28 16.43 16.56 20.15 12.04 20.15C10.56 20.15 9.14 19.74 7.92 19.01L7.54 18.78L4.32 19.68L5.26 16.54L5.03 16.16C4.25 14.88 3.8 13.43 3.8 11.91C3.8 7.39 7.52 3.67 12.04 3.67M9.1 7.67C8.92 7.67 8.76 7.68 8.61 7.9C8.46 8.12 7.91 8.73 7.91 9.81C7.91 10.89 8.63 11.93 8.76 12.11C8.89 12.29 11.26 15.93 14.79 17.53C17.72 18.84 18.3 18.5 18.83 18.45C19.36 18.4 20.12 17.65 20.34 17.04C20.56 16.43 20.56 15.92 20.48 15.77C20.39 15.62 20.22 15.53 19.95 15.39C19.68 15.26 18.25 14.58 17.99 14.47C17.73 14.36 17.55 14.31 17.38 14.53C17.21 14.75 16.66 15.36 16.51 15.54C16.36 15.72 16.21 15.74 15.94 15.6C15.67 15.46 14.61 15.11 13.36 13.98C12.39 13.11 11.76 12.08 11.59 11.82C11.42 11.56 11.53 11.43 11.66 11.3C11.78 11.18 11.93 10.97 12.08 10.82C12.23 10.67 12.28 10.54 12.39 10.32C12.5 10.1 12.42 9.93 12.33 9.79C12.24 9.65 11.74 8.41 11.52 7.9C11.31 7.42 11.09 7.48 10.92 7.47" /></svg>
-            </a>
-            <a href="https://www.instagram.com/endocrinokellysakamoto" target="_blank" aria-label="Instagram" class="hover:text-white"> <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm0 1.623c-2.403 0-2.73.01-3.682.055-1.111.051-1.723.235-2.146.49-.493.292-.857.656-1.149 1.149-.292.493-.44.982-.49 1.723-.046.952-.055 1.279-.055 3.682s.01 2.73.055 3.682c.051.74.235 1.23.49 1.723.292.493.656.857 1.149 1.149.424.255 1.035.44 2.146.49.952.046 1.279.055 3.682.055s2.73-.01 3.682-.055c1.111-.051 1.723-.235 2.146-.49.493-.292.857-.656 1.149-1.149.292-.493.44-.982.49-1.723.046-.952.055-1.279.055-3.682s-.01-2.73-.055-3.682c-.051-.74-.235-1.23-.49-1.723-.292-.493-.656-.857-1.149-1.149-.424-.255-1.035-.44-2.146-.49-.952-.046-1.279-.055-3.682-.055zm0 3.882a6.12 6.12 0 100 12.24 6.12 6.12 0 000-12.24zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.447 1.447 0 10-2.894 0 1.447 1.447 0 002.894 0z" clip-rule="evenodd" /></svg>
-            </a>
+            <!-- Ícones Sociais -->
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://wa.me/5549991160511" target="_blank" aria-label="WhatsApp" class="hover:text-white">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.58C8.75 21.39 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2M12.04 3.67C16.56 3.67 20.28 7.39 20.28 11.91C20.28 16.43 16.56 20.15 12.04 20.15C10.56 20.15 9.14 19.74 7.92 19.01L7.54 18.78L4.32 19.68L5.26 16.54L5.03 16.16C4.25 14.88 3.8 13.43 3.8 11.91C3.8 7.39 7.52 3.67 12.04 3.67M9.1 7.67C8.92 7.67 8.76 7.68 8.61 7.9C8.46 8.12 7.91 8.73 7.91 9.81C7.91 10.89 8.63 11.93 8.76 12.11C8.89 12.29 11.26 15.93 14.79 17.53C17.72 18.84 18.3 18.5 18.83 18.45C19.36 18.4 20.12 17.65 20.34 17.04C20.56 16.43 20.56 15.92 20.48 15.77C20.39 15.62 20.22 15.53 19.95 15.39C19.68 15.26 18.25 14.58 17.99 14.47C17.73 14.36 17.55 14.31 17.38 14.53C17.21 14.75 16.66 15.36 16.51 15.54C16.36 15.72 16.21 15.74 15.94 15.6C15.67 15.46 14.61 15.11 13.36 13.98C12.39 13.11 11.76 12.08 11.59 11.82C11.42 11.56 11.53 11.43 11.66 11.3C11.78 11.18 11.93 10.97 12.08 10.82C12.23 10.67 12.28 10.54 12.39 10.32C12.5 10.1 12.42 9.93 12.33 9.79C12.24 9.65 11.74 8.41 11.52 7.9C11.31 7.42 11.09 7.48 10.92 7.47" /></svg>
+                </a>
+                <a href="https://www.instagram.com/endocrinokellysakamoto" target="_blank" aria-label="Instagram" class="hover:text-white"> <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm0 1.623c-2.403 0-2.73.01-3.682.055-1.111.051-1.723.235-2.146.49-.493.292-.857.656-1.149 1.149-.292.493-.44.982-.49 1.723-.046.952-.055 1.279-.055 3.682s.01 2.73.055 3.682c.051.74.235 1.23.49 1.723.292.493.656.857 1.149 1.149.424.255 1.035.44 2.146.49.952.046 1.279.055 3.682.055s2.73-.01 3.682-.055c.1111-.051 1.723-.235 2.146-.49.493-.292.857-.656 1.149-1.149.292-.493.44-.982-.49-1.723.046-.952.055-1.279-.055-3.682s-.01-2.73-.055-3.682c-.051-.74-.235-1.23-.49-1.723-.292-.493-.656-.857-1.149-1.149-.424-.255-1.035-.44-2.146.49-.952-.046-1.279-.055-3.682-.055zm0 3.882a6.12 6.12 0 100 12.24 6.12 6.12 0 000-12.24zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.447 1.447 0 10-2.894 0 1.447 1.447 0 002.894 0z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+
+            <hr class="my-6 border-gray-700" />
+
+            <!-- Navegação do Rodapé -->
+            <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm">
+                <a href="#sobre" class="hover:text-white">Sobre</a>
+                <a href="#depoimentos" class="hover:text-white">Depoimentos</a>
+                <a href="#abordagem" class="hover:text-white">Abordagem</a>
+                <a href="#metodo" class="hover:text-white">Método</a>
+                <a href="#programa-evoluir" class="hover:text-white">Programa</a>
+                <a href="#consultorio" class="hover:text-white">Consultório</a>
+                <a href="#faq" class="hover:text-white">FAQ</a> <!-- Link FAQ adicionado -->
+                <a href="#contato" class="hover:text-white">Contato</a>
+            </nav>
+
+            <p class="mt-8 text-sm text-gray-500">
+                © <span id="current-year"></span> Todos os direitos reservados.
+            </p>
+
         </div>
-
-        <hr class="my-6 border-gray-700" />
-
-        <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm">
-            <a href="#sobre" class="hover:text-white">Sobre</a>
-            <a href="#abordagem" class="hover:text-white">Abordagem</a>
-            <a href="#metodo" class="hover:text-white">Método</a>
-            <a href="#programa-evoluir" class="hover:text-white">Programa</a>
-            <a href="#consultorio" class="hover:text-white">Consultório</a>
-            <a href="#contato" class="hover:text-white">Contato</a>
-        </nav>
-
-        <p class="mt-8 text-sm text-gray-500">
-            &copy; <span id="current-year"></span> Todos os direitos reservados.
-        </p>
-
-    </div>
-</footer>
+    </footer>
 
 
     <script>
-        // Mobile menu toggle
+        // Toggle do Menu Mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -549,8 +756,8 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
-        const navLinks = document.querySelectorAll('header nav a, #mobile-menu a');
+        // Fechar menu mobile ao clicar no link
+        const navLinks = document.querySelectorAll('#mobile-menu a');
         for (let link of navLinks) {
             link.addEventListener('click', (e) => {
                 if(e.currentTarget.href.includes("#")){
@@ -558,12 +765,31 @@
                 }
             });
         }
+        
+        // Fechar menu desktop ao clicar no link (se o link for para uma âncora na página)
+        const desktopNavLinks = document.querySelectorAll('header nav a'); 
+        for (let link of desktopNavLinks) {
+            link.addEventListener('click', (e) => {
+                // Não precisa fechar o menu desktop, mas podemos adicionar lógica aqui se necessário no futuro
+            });
+        }
 
-	document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Ano dinâmico no rodapé
+	    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Funcionalidade Accordion FAQ (opcional, só se precisar que apenas um fique aberto)
+        // const details = document.querySelectorAll('.faq-item');
+        // details.forEach(targetDetail => {
+        //     targetDetail.addEventListener('click', () => {
+        //         details.forEach(detail => {
+        //             if (detail !== targetDetail) {
+        //                 detail.removeAttribute('open');
+        //             }
+        //         });
+        //     });
+        // });
+
     </script>
 </body>
 </html>
-
-
-
 
